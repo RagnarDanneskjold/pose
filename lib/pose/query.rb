@@ -13,7 +13,7 @@ module Pose
 
 
     def initialize classes, text, options = {}
-      @classes = [classes].flatten
+      @classes = Array(classes).flatten
       @text = text
       @options = options
     end
@@ -67,7 +67,7 @@ module Pose
 
     # Returns the custom JOIN expressions of this query.
     def joins
-      @joins ||= [@options[:joins]].flatten.compact
+      @joins ||= Array(@options[:joins]).flatten.compact
     end
 
 
